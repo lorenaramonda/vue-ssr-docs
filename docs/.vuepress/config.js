@@ -78,20 +78,20 @@ module.exports = {
           }
         ],
         sidebar: [
-          ['/', 'Introduzione'],
-          '/guide/',
-          '/guide/universal',
-          '/guide/structure',
-          '/guide/routing',
-          '/guide/data',
-          '/guide/hydration',
-          '/guide/bundle-renderer',
-          '/guide/build-config',
-          '/guide/css',
-          '/guide/head',
-          '/guide/caching',
-          '/guide/streaming',
-          '/guide/non-node'
+          ['/it/', 'Introduzione'],
+          '/it/guide/',
+          '/it/guide/universal',
+          '/it/guide/structure',
+          '/it/guide/routing',
+          '/it/guide/data',
+          '/it/guide/hydration',
+          '/it/guide/bundle-renderer',
+          '/it/guide/build-config',
+          '/it/guide/css',
+          '/it/guide/head',
+          '/it/guide/caching',
+          '/it/guide/streaming',
+          '/it/guide/non-node'
         ]
       },
       '/zh/': {
