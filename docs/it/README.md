@@ -28,9 +28,9 @@ Confrontato con una tradizionale SPA (Applicazione Single-Page), il vantaggio de
 
 Ci sono anche alcuni compromessi da considerare quando si usa il SSR:
 
-- Vincoli di sviluppo. Il codice specificatamente relativo al browser può essere usato solo all'interno di determinati {em0}lifecycle hooks{/em0}; alcune librerie esterne potrebbero aver bisogno di trattamenti speciali affinché possano essere in grado di girare in un'applicazione eseguita sul server.
+- Vincoli di sviluppo. Il codice specificatamente relativo al browser può essere usato solo all'interno di determinati *lifecycle hooks*; alcune librerie esterne potrebbero aver bisogno di trattamenti speciali affinché possano essere in grado di girare in un'applicazione eseguita sul server.
 
-- Più requisiti coinvolti nell'installazione e nel distribuzione. Diversamente da un'applicazione statica SPA che può essere distribuita su qualsiasi server, un'applicazione eseguita sul server ha bisogno di un ambiente in cui un server Node.js possa girare.
+- Più requisiti coinvolti nell'installazione e nella distribuzione. Diversamente da un'applicazione statica SPA che può essere distribuita su qualsiasi server, un'applicazione eseguita sul server ha bisogno di un ambiente in cui un server Node.js possa girare.
 
 - Più carico lato server. È chiaro che eseguire un'intera applicazione in Node.js sarà più dispendioso in termini di CPU rispetto alla semplice pubblicazione di file statici, pertanto se ti aspetti un traffico elevato, devi essere preparato al carico del server che ne deriverà e ad utilizzare strategie di caching in modo saggio.
 

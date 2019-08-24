@@ -5,6 +5,11 @@ module.exports = {
       title: 'Vue SSR Guide',
       description: 'Vue.js Server-Side Rendering Guide'
     },
+    '/it/': {
+      lang: 'it-IT',
+      title: 'Guida a Vue SSR',
+      description: 'Guida all\'esecuzione lato server di Vue.js'
+    },
     '/zh/': {
       lang: 'zh-CN',
       title: 'Vue SSR 指南',
@@ -43,6 +48,37 @@ module.exports = {
         ],
         sidebar: [
           ['/', 'Introduction'],
+          '/guide/',
+          '/guide/universal',
+          '/guide/structure',
+          '/guide/routing',
+          '/guide/data',
+          '/guide/hydration',
+          '/guide/bundle-renderer',
+          '/guide/build-config',
+          '/guide/css',
+          '/guide/head',
+          '/guide/caching',
+          '/guide/streaming',
+          '/guide/non-node'
+        ]
+      },
+      '/it/': {
+        label: 'Italiano',
+        selectText: 'Lingue',
+        editLinkText: 'Modifica questa pagina su GitHub',
+        nav: [
+          {
+            text: 'Guida',
+            link: '/it/guide/'
+          },
+          {
+            text: 'API Reference',
+            link: '/it/api/'
+          }
+        ],
+        sidebar: [
+          ['/', 'Introduzione'],
           '/guide/',
           '/guide/universal',
           '/guide/structure',
