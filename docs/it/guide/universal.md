@@ -6,13 +6,13 @@ Prima di andare oltre, parliamo un attimo dei vincoli che ci possono essere scri
 
 In un'app solo client, ogni utente utilizzerà una nuova istanza dell'applicazione nel proprio browser. Vogliamo ottenere la stessa cosa anche per l'esecuzione lato server: ogni richiesta deve avere un'istanza dell'applicazione nuova e isolata in modo che non vi sia inquinamento dello stato tra le richieste.
 
-Poiché il processo di rendering effettivo deve essere deterministico, provvederemo anche ad un "pre-fetch" dei dati sul server - questo significa che lo stato della nostra applicazione sarà già risolto una volta iniziato il rendering. Ciò significa che la reattività dei dati non è necessaria sul server, quindi è disabilitata per impostazione predefinita. La disabilitazione della reattività dei dati evita anche il dispendio di prestazione per la conversione dei dati in oggetti reattivi.
+Poiché il processo di rendering effettivo deve essere deterministico, provvederemo anche ad un "pre-fetch" dei dati sul server - questo significa che lo stato della nostra applicazione sarà già risolto una volta iniziato il rendering. Per questo motivo che la reattività dei dati non è necessaria sul server, quindi è disabilitata per impostazione predefinita. La disabilitazione della reattività dei dati evita anche il dispendio di prestazione per la conversione dei dati in oggetti reattivi.
 
-## Lifecycle Hooks del componente
+## I Lifecycle Hook del componente
 
 Dato che non ci sono aggiornamenti dinamici, di tutti i lifecycle hooks, solo `beforeCreate` e `created` saranno chiamati durante il SSR. Questo significa che qualsiasi codice dentro altri lifecycle hooks quali `beforeMount` o `mounted` saranno eseguiti soltanto sul client.
 
-Un'altra cosa da notare è che si dovrebbe evitare codice che produca effetti collaterali globali dentro `beforeCreate` e `created`, per esempio impostando dei timer con `setInterval`. Nel codice solo lato client possiamo impostare un timer e poi distruggerlo in `beforeDestroy` o `destroyed`. Tuttavia, siccome l'hook destroy non verrà chiamato dal SSR, i timer rimarranno attivi per sempre. Per evitarlo, sposta invece il codice con effetti collaterali in `beforeMount` o `mounted`.
+Un'altra cosa da notare è che si dovrebbe evitare codice che produca effetti collaterali globali dentro `beforeCreate` e `created`, per esempio impostando dei timer con `setInterval`. Nel codice lato client soltanto possiamo impostare un timer e poi distruggerlo dentro `beforeDestroy` o `destroyed`. Tuttavia, siccome l'hook destroy non verrà chiamato dal SSR, i timer rimarranno attivi per sempre. Per evitarlo, sposta invece il codice con effetti collaterali in `beforeMount` o `mounted`.
 
 ## Accesso alle API specifiche della piattaforma
 
@@ -22,11 +22,11 @@ Per attività condivise tra server e client, ma che usano API di piattaforma dif
 
 Per API solo browser, l'approccio comune è quello di accedervi in modo lazy all'interno di un lifecycle hook utilizzabile solo dal client.
 
-Tieni conto che se una libreria di terze parti non è stata scritta con considerando la modalità universale, potrebbe essere complicato intgrarlo in un'applicazione eseguita sul server. *Potresti* essere in grado di farlo funzionare imitando alcune delle variabili globali, ma potrebbe creare confusione e interferire con il codice di rilevamento dell'ambiente di altre librerie.
+Tieni conto che se una libreria di terze parti non è stata scritta considerando la modalità universale, potrebbe essere complicato integrarla in un'applicazione eseguita sul server. *Potresti* essere in grado di farla funzionare imitando alcune delle variabili globali, ma potrebbe creare confusione e interferire con il codice di rilevamento dell'ambiente di altre librerie.
 
-## Directives personalizzate
+## Direttive personalizzate
 
-La maggior parte delle direttive personalizzate manipolano direttamente il DOM e pertanto causerà errori durante il SSR. Esistono due modi per aggirarlo:
+La maggior parte delle direttive personalizzate manipolano direttamente il DOM e pertanto causeranno errori durante il SSR. Esistono due modi per evitarlo:
 
 1. Preferisci l'utilizzo di componenti come meccanismo di astrazione e lavora invece a livello di DOM virtuale (ad esempio, usando le funzioni di rendering).
 
