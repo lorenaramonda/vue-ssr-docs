@@ -79,19 +79,7 @@ module.exports = {
         ],
         sidebar: [
           ['/it/', 'Introduzione'],
-          '/it/guide/',
-          '/it/guide/universal',
-          '/it/guide/structure',
-          '/it/guide/routing',
-          '/it/guide/data',
-          '/it/guide/hydration',
-          '/it/guide/bundle-renderer',
-          '/it/guide/build-config',
-          '/it/guide/css',
-          '/it/guide/head',
-          '/it/guide/caching',
-          '/it/guide/streaming',
-          '/it/guide/non-node'
+          '/it/guide/'
         ]
       },
       '/zh/': {

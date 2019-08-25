@@ -11,7 +11,7 @@ Useremo NPM durante tutta la guida, ma sentiti libero di usare [Yarn](https://ya
 #### Note
 
 - Si raccomanda di usare Node.js versione 6+.
-- le versioni di `vue-server-renderer` e `vue` devono corrispondere.
+- Le versioni di `vue-server-renderer` e `vue` devono corrispondere.
 - `vue-server-renderer` si appoggia su alcuni moduli Node.js nativi pertanto può essere usato solo con Node.js. È possibile che forniremo una distribuzione più semplice in futuro che possa girare su altri runtime JavaScript.
 
 ## Eseguire un'istanza Vue
@@ -33,8 +33,7 @@ renderer.renderToString(app, (err, html) => {
   // => <div data-server-rendered="true">Hello World</div>
 })
 
-// nella versione 2.5.0+, ritorna una Promise
-// se nessuna callback viene passata:
+// nella versione 2.5.0+, ritorna una Promise se nessuna callback viene passata:
 renderer.renderToString(app).then(html => {
   console.log(html)
 }).catch(err => {
@@ -109,7 +108,7 @@ const renderer = createRenderer({
 })
 
 renderer.renderToString(app, (err, html) => {
-  console.log(html) // questo sarà l'intera pagina con il contenuto iniettato
+  console.log(html) // è l'intera pagina con il contenuto iniettato
 })
 ```
 
@@ -120,10 +119,10 @@ Il template supporta anche della semplice interpolazione. Dato il seguente templ
 ```html
 <html>
   <head>
-    <!-- usa doppie parentesi graffe per interpolare HTML escaped -->
+    <!-- usa doppie parentesi graffe per interpolare HTML con escape dei caratteri speciali -->
     <title>{{ title }}</title>
 
-    <!-- usa triple parentesi graffe per interpolare HTML non escaped -->
+    <!-- usa triple parentesi graffe per interpolare HTML senza escape dei caratteri speciali -->
     {{{ meta }}}
   </head>
   <body>
@@ -154,7 +153,7 @@ L'oggetto `context` può essere condiviso anche con l'istanza dell'applicazione 
 In aggiunta, il template supporta alcune funzionalità avanzate quali:
 
 - Auto iniezione di CSS critici durante l'utilizzo di componenti `*.vue`;
-- Auto iniezione di collegamenti alle risorse e suggerimenti sulle risorse durante l'utilizzo di `clientManifest`;
+- Auto iniezione di collegamenti agli assets e suggerimenti sulle risorse durante l'utilizzo di `clientManifest`;
 - Auto iniezione e prevenzione di XSS quando si incorpora lo stato di Vuex per l'idratazione lato client. 
 
 Ne discuteremo più avanti quando introdurremo i concetti annessi nella guida.
