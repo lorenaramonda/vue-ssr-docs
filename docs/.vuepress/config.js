@@ -79,7 +79,8 @@ module.exports = {
         ],
         sidebar: [
           ['/it/', 'Introduzione'],
-          '/it/guide/'
+          '/it/guide/',
+          '/it/guide/universal'
         ]
       },
       '/zh/': {
