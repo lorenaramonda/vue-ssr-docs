@@ -6,7 +6,7 @@ Prima di andare oltre, parliamo un attimo dei vincoli che ci possono essere scri
 
 In un'app solo client, ogni utente utilizzerà una nuova istanza dell'applicazione nel proprio browser. Vogliamo ottenere la stessa cosa anche per l'esecuzione lato server: ogni richiesta deve avere un'istanza dell'applicazione nuova e isolata in modo che non vi sia inquinamento dello stato tra le richieste.
 
-Poiché il processo di rendering effettivo deve essere deterministico, provvederemo anche ad un "pre-fetch" dei dati sul server - questo significa che lo stato della nostra applicazione sarà già risolto una volta iniziato il rendering. Per questo motivo che la reattività dei dati non è necessaria sul server, quindi è disabilitata per impostazione predefinita. La disabilitazione della reattività dei dati evita anche il dispendio di prestazione per la conversione dei dati in oggetti reattivi.
+Poiché il processo di rendering effettivo deve essere deterministico, provvederemo anche ad un "pre-fetch" dei dati sul server - questo significa che lo stato della nostra applicazione sarà già risolto una volta iniziato il rendering. Per questo motivo la reattività dei dati non è necessaria sul server, quindi è disabilitata per impostazione predefinita. La disabilitazione della reattività dei dati evita anche il dispendio di prestazione per la conversione dei dati in oggetti reattivi.
 
 ## I Lifecycle Hook del componente
 
